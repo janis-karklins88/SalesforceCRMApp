@@ -1,20 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
-package salesforcecrmapp;
+import at.favre.lib.crypto.bcrypt.BCrypt;
 
-/**
- *
- * @author user
- */
 public class SalesforceCRMApp {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        loginUsers dao = new loginUsers();
+        String username = "";
+        String pass = "";
+    boolean loginResult = dao.loginUser(username, pass);
+    if (loginResult) {
+        System.out.println("Welcome, " + username);
+    } else {
+        System.out.println("Login failed.");
     }
-    
+        
+    }
 }
